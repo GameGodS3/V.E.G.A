@@ -21,8 +21,7 @@ def launch(command):
         print("Launching " + path)
         os.startfile(path)
         print("If it didn't launch, don't blame me. It's your fault.")
-  #  except AttributeError:
-       # print("Attribute Error, check code again.")
+
     except:
         A=command[7:]
         print("Launching "+A)
