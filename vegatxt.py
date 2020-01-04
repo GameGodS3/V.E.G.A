@@ -4,7 +4,6 @@ import webbrowser
 import subprocess
 
 command = input("How may I help you? \n")
-
 def get_path(command):
     a = os.popen('where " '+command).readlines()
     if a:
@@ -15,6 +14,21 @@ def get_path(command):
     c = os.popen('where /r ]"\Program Files (x86)" '+command).readlines()
     if c:
         return c
+def launch(command):
+    try:
+        path=get_path(command)
+        path='"'+path[0].split('\n')[0]+'"'
+        print("Launching " + path)
+        os.startfile(path)
+        print("If it didn't launch, don't blame me. It's your fault.")
+  #  except AttributeError:
+       # print("Attribute Error, check code again.")
+    except:
+        A=command[7:]
+        print("Launching "+A)
+        os.system(A)
+        print("If it didn't launch, don't blame me. It's your fault.")
+        
 
 def vega():
     if command == "control panel" or command=="Control Panel" or command=="Control panel":
@@ -27,16 +41,11 @@ def vega():
             print ("Opening " + domain + ", sir\n")
             url="https://www." + domain
             webbrowser.open(url)
-            
-    elif "run" in command:
-        #os.system("explorer.exe Shell:::{2559a1f3-21d7-11d4-bdaf-00c04f60b9f0}")
-        subprocess.run("wmplayer.exe")
 
     elif "launch" in command:
-        path=get_path(command)
-        path='"'+path[0].split('\n')[0]+'"'
-        os.startfile(path)
+        launch(command)
 
 while command != "bye":
     vega()
     command=input("How else may I help you? \n")
+
