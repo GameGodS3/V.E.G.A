@@ -4,6 +4,9 @@ import webbrowser
 import subprocess
 import datetime
 
+os.system("title V.E.G.A")
+os.system("mode 112, 35")
+os.system("color 0A")
 command = input("How may I help you? \n")
 def get_path(command):
     a = os.popen('where " '+command).readlines()
@@ -23,6 +26,7 @@ def launch(command):
         print("Launching " + path)
         os.startfile(path)
         print("If it didn't launch, don't blame me. It's your fault.")
+
     except:
         A=command[7:]
         print("Launching "+A)
@@ -63,6 +67,7 @@ def vega():
         print("time                     --- Shows the current time")
         print("date                     --- Shows the current date and day")
         print("clear                    --- To clear the screen")
+        print("shutdown                 --- Shuts down the system")
         print("exit or bye              --- To quit V.E.G.A.")
         print("")
     elif "terminal" in command:
@@ -86,9 +91,9 @@ def vega():
         print ("Hi, there. The name's V.E.G.A. What's yours?")
         name = input()
         print("Hi, " + name)
-    elif "music" in command:
+    elif "music" in command or "Music" in command:
         print ("Ok, I will open the Music folder for you")
-        os.path.expanduser('~')
+        os.system("cd %userprofile%/Music && start .")
     elif "time" in command:
         x=datetime.datetime.now()
         print(x.hour, ":", x.minute, ":", x.second, sep="")
@@ -97,6 +102,8 @@ def vega():
         print(x.strftime("%d"), x.strftime("%m"), x.strftime("%Y"), ",", x.strftime("%A"))
     elif "clear" in command:
         os.system("cls")
+    elif "shutdown" in command:
+        os.system("shutdown /h")
     elif "exit" in command:
         exit()
     else:
@@ -104,3 +111,4 @@ def vega():
 while command != "bye":
     vega()
     command=input("How else may I help you? \n")
+
