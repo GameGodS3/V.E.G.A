@@ -12,7 +12,7 @@
 - [ ]Enable voice input
 - [ ]Probably (not very necessarily) include AI
 - [ ]Make a GUI
-- [ ]Wrote this so that you read it first cuz it has a tick xD
+- [x]Wrote this so that you assume it is marked as complete xD
 
 Thank you for reading this lazy piece of text.
 
