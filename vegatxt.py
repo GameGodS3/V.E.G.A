@@ -79,6 +79,7 @@ def vega():
         print("launch <program.exe>     --- Searches through Windows directories and finds the program's exe file to open")
         print("hello                    --- V.E.G.A. ask your name")
         print("music                    --- Opens your Music Folder")
+        print("volume                   --- V.E.G.A. helps to set the system volume")
         print("time                     --- Shows the current time")
         print("date                     --- Shows the current date and day")
         print("clear                    --- To clear the screen")
