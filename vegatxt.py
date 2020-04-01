@@ -33,7 +33,22 @@ def launch(command):
         os.system(A)
         print("If it didn't launch, don't blame me. It's your fault.")
         
-
+def volume():
+    #Currently the volume settings work with the help of a third-party software named NirCmd by NirSoft(c). All Rights Reserved
+    #So for controlling the volume, the user would have to install nircmd.exe (which is somewhat an inconvenience)
+    #Also, two steps are required for setting the volume. This needs to be reduced to one step.
+    volnum=int(input("Enter volume level: "))
+    if volnum>-1 and volnum<101:
+        temp=(volnum/100)*65535
+        send= "nircmd.exe setsysvolume "+str(temp)
+        os.system("nircmd.exe mutesysvolume 0")
+        os.system(send)
+        print(volnum*"|" + (100-volnum)*"-")
+        print("Volume set at " + str(volnum) + "%")
+        print("")
+    else:
+        print("Invalid volume level")
+        volume()
 def vega():
     if command == "control panel" or command=="Control Panel" or command=="Control panel":
         os.system("control panel")
@@ -100,6 +115,8 @@ def vega():
     elif "date" in command:
         x=datetime.datetime.now()
         print(x.strftime("%d"), x.strftime("%m"), x.strftime("%Y"), ",", x.strftime("%A"))
+    elif "volume" in command:
+        volume()
     elif "clear" in command:
         os.system("cls")
     elif "shutdown" in command:
