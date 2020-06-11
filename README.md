@@ -17,10 +17,28 @@
 
 
 ## Installation (and latest update)
+ Download this repo as a zip and unzip or clone the project
+ ```
+ git clone https://github.com/GameGodS3/V.E.G.A..git
+ ```
+ 
  Run the install.py script before using V.E.G.A. This is for the automated web login feature.
+ 
+ ```
+ python install.py
+ ```
+ or you may just double click the file.
+ 
+ Then run V.E.G.A.
+ ```
+ python vegatxt.py
+ ```
+ or just double click it.
  
  As of now, only Instagram has been added for automated log in. For logging in to your Instagram, tell V.E.G.A. to "log in to instagram". (Asks for your credentials in the first login. Don't panic. Credentials are stored locally in your machine as a CSV file. It aint getting sent anywhere. I am not Zuckerberg.
  
+ For knowing the commands type 'help' inside V.E.G.A.
+
 
 Thank you for reading this lazy piece of text.
 
