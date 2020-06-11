@@ -3,6 +3,7 @@ import re
 import webbrowser
 import subprocess
 import datetime
+from sele import sel
 
 os.system("title V.E.G.A")
 os.system("mode 112, 35")
@@ -77,6 +78,7 @@ def vega():
         print("Terminal                 --- To open terminal")
         print("open <website.com>       --- To browse the mentioned website")
         print("launch <program.exe>     --- Searches through Windows directories and finds the program's exe file to open")
+        print("log in to Instagram      --- automatically logs into Instagram (via Chrome)")
         print("hello                    --- V.E.G.A. ask your name")
         print("music                    --- Opens your Music Folder")
         print("volume                   --- V.E.G.A. helps to set the system volume")
@@ -124,6 +126,17 @@ def vega():
         os.system("shutdown /h")
     elif "exit" in command:
         exit()
+    elif "log" in command or "Log" in command or "login" in command or "Login" in command:
+        if "instagram" in command or "Instagram" in command:
+            print("Loggin you into Instagram.")
+            print("Don't click on anything until the clean home page is displayed.\nThe entire login process is automated.")
+            print(".............")
+            print("")
+            print("")
+            sel.activity()
+            print("Enjoy.")
+        else:
+            print("Application incorrect")
     else:
         print("Sorry. Invalid command.")
 while command != "bye":
